@@ -2,7 +2,7 @@
 
 Basic newspaper/blog platform to perform standard CRUD operations plus a set of automated tests to ensure all the platform functionalities are running as expected. 
 User login and authentitication is handled by Passport (local strategy). 
-No styling applied. 
+##### No styling applied. 
 
 ![screen shot 2018-12-01 at 6 00 06 pm](https://user-images.githubusercontent.com/23165579/49325436-73b5e480-f596-11e8-8748-c8c9de97c111.png)
 
