@@ -1,0 +1,76 @@
+.art_title {
+  font-size: 30px;
+}
+
+/****** Global /******/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+* { font-family: Raleway, sans-serif; }
+
+/****** Header /******/
+
+header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #1EAEDB;
+}
+
+.navbar-header a {
+  color: white;
+}
+
+.username-tag {
+  font-size: 14px;
+  margin-left: 10px;
+  color: black;
+}
+
+/****** Body /******/
+
+.page-title {
+  margin-top: 30px;
+}
+
+.art_title {
+  font-family: bold;
+}
+
+.delete-profile:hover, .delete-article:hover {
+  background-color: #ac4d4d;
+}
+
+.button-comment-cancel {
+  background-color: none;
+  margin-left: 5px;
+}
+
+.log-reg-error {
+  color: red;
+  border-color: red;
+}
+
+.invisible {
+  display: none;
+}
+
+.articleComment {
+  font-size: 14px;
+  color: grey;
+}
+
+.box-newArt-message {
+  color: green;
+}
+
+
+/****** Footer /******/
+
+footer {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #1EAEDB;
+}
+
+.footer a {
+  color: white;
+}

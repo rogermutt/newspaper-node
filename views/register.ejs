@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><%- include('partials/head'); %></head>
+<header><%- include('partials/header', {user: user}); %></header>
+<body>
+
+<div class="container">
+<h4 class="page-title">Sign up</h4>
+
+<form action="/register" method="post">
+
+  <div class="row">
+    <div class="six columns">
+      <label for="login-username">Username</label>
+      <input class="reg-username u-full-width" type="text" name="username" id="login-username">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <label for="login-password">Password</label>
+      <input type="password" class="reg-pwd u-full-width" type="text" name="password" id="login-password">
+    </div>
+  </div>
+
+  <input class="button-primary" type="submit" value="Submit">
+</form>
+
+<% if (message.length > 0) { %>
+       <p class="log-reg-error"><%= message %></p>
+   <% } %>
+
+
+</div>
+
+</body>
+
+<footer><%- include('partials/footer'); %></footer>
+</html>

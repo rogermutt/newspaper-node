@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head><%- include('partials/head'); %></head>
+
+  <body>
+
+<header><%- include('partials/header', {user: user}); %></header>
+
+<div class="container">
+
+  <% let author = user ? user.username : "anonymous"; %>
+
+    <h4 class="page-title">Welcome</h4>
+
+    <% if (existArt.length < 1) { %>
+      <p class="noArticles">Stay tuned. Interesting articles coming soon.</p>
+      <%  } %>
+
+    <% let toDisplay = user ? existArt : existArt.filter(article => article.type == "standard") ; %>
+      <% toDisplay.reverse().map(article => { %>
+
+        <div class="article-block">
+          <span><%= article.timestamp %></span><br>
+          <h6 class="art_title"><%= article.title %></h6>
+          <p><%= article.content %></p>
+
+          <span class=""> <%= article.comments.length %> comment(s)</span> <br>
+
+          <% article.comments.map(comment => { %>
+            <span class="articleComment"> " <%= comment.text %> " - <%= comment.author %> </span><br>
+          <% }); %>
+
+            <form action="newcomment" method="post">
+              <input class="six columns commentSection" type="text" name="commentContent" placeholder="Add a comment...">
+              <input type="hidden" name="articleID" value= <%= article._id %> >
+              <input type="hidden" name="author" value= <%= author %> >
+            </form><br>
+
+        </div>
+        <% }); %>
+
+</div>
+
+  </body>
+
+<footer><%- include('partials/footer'); %></footer>
+
+<script>
+// TBC if adding events
+</script>
+
+
+</html>

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container navbar-header">
+         <a class="button" href="/home">Home</a>
+        <% if (user) { %>
+          <a class="button" href="/logout">Logout</a>
+          <a id="profile-btn" class="button" href="/profile">Profile</a>
+          <a id="new-article" class="button" href="/newarticle">Add articles</a>
+          <a class="button admin-dashboard" href="/adminDashboard">Admin Dashboard</a>
+          <span class="username-tag" href="#">Welcome <%= user.username %></span>
+          <% } else { %>
+          <a class="button" href="/login">Login</a>
+          <a class="button" href="/register">Sign up</a>
+            <% } %>
+    </div>
+</nav>

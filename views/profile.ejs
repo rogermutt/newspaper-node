@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head><%- include('partials/head'); %></head>
+
+  <body>
+
+    <header><%- include('partials/header', {user: user}); %></header>
+
+    <div class="container">
+      <h4 class="page-title">Profile</h4>
+
+      <strong>Your user ID</strong>:
+      <%= user.id %>
+        <div class="temp"><strong>Your username</strong>:
+          <a id="existing-username" href="#"><%= user.username %></a><br>
+          <span>You commented on <%= comments %> articles</span>
+
+        </div><br>
+
+        <% if (alreadyExist != null) { %>
+               <p class="log-reg-error"><%= alreadyExist %></p><br>
+        <% } %>
+
+        <form action="/delete-account" method="post">
+          <input type="hidden" name="username" value= <%= user.username %> >
+          <input class="delete-profile" type="submit" value="Delete my account">
+        </form>
+    </div>
+
+  </body>
+
+<script>
+
+const temp = document.getElementsByClassName("temp");
+
+document.getElementById("existing-username").addEventListener("click", (el)=>{
+  let existingName = el.target.innerText;
+  temp[0].innerHTML = "<div class=\"update-username-container\"><form action=\"/profile\" method=\"post\"><div class=\"row\"><div class=\"six columns\"><input type=\"hidden\" name=\"existingName\"/ value="+`"${existingName}"`+"><label>New Username:</label><input class=\"input-new-username\" type=\"text\" name=\"username\"/><br/></div></div><div class=\"row\"><input class=\"button-primary\" type=\"submit\" value=\"Update\"/></form><button class=\"close-username-container\">X</button></div></div>";
+});
+
+const closeBtn = document.getElementsByClassName("close-username-container");
+const updateUserContainer = document.getElementsByClassName("update-username-container");
+
+closeBtn.addEventListener("click", (el)=>{
+  updateUserContainer[0].remove();
+});
+
+</script>
+
+<footer><%- include('partials/footer'); %></footer>
+
+</html>

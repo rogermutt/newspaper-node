@@ -1,0 +1,33 @@
+{
+  "name": "newspaper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha ./tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.1",
+    "mongoose": "^5.3.14",
+    "mongoose-unique-validator": "^2.0.1",
+    "nodemon": "^1.17.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "query-string": "^6.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.5.0",
+    "superagent": "^3.8.3",
+    "supertest": "^3.1.0"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head><%- include('partials/head'); %></head>
+<header><%- include('partials/header', {user: user}); %></header>
+  <body>
+
+    <div class="container">
+    <h4 class="page-title">Create a new article</h4>
+
+    <% if (messages.length > 0) { %>
+      <div class="box-newArt-message">
+      <h6> The article <%= messages %> has been created <a class="button close-newArt-message">X</a> </h6>
+      </div>
+    <% } else %>
+
+      <form action="/newarticle" method="post">
+
+        <div class="row">
+          <div class="six columns">
+            <label for="newArt-title">Title</label>
+            <input class="article-title u-full-width" type="text" name="title" id="newArt-title">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="six columns">
+            <label for="newArt-type">Article Type</label>
+            <select name="article_type" id="newArt-type">
+              <option value="premium">Premium</option>
+              <option value="standard">Standard</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="twelve columns">
+            <label for="newArt-content">Content</label>
+            <input class="article-text u-full-width" type="text" name="content" id="newArt-content">
+          </div>
+        </div>
+
+        <input class="button-primary" type="submit" value="Submit">
+      </form>
+
+</div>
+  </body>
+
+
+<script>
+
+document.getElementsByClassName("close-newArt-message")[0].addEventListener("click", (el)=>{
+  el.target.parentNode.remove();
+});
+
+</script>
+
+<footer><%- include('partials/footer'); %></footer>
+</html>

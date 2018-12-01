@@ -1,0 +1,49 @@
+  <!DOCTYPE html>
+<html>
+<head><%- include('partials/head'); %></head>
+<header><%- include('partials/header', {user: user}); %></header>
+
+  <body>
+    <div class="container">
+    <h4 class="page-title">Admin Dashboard</h4>
+
+    <% if (existArt.length < 1) { %>
+      <p class="noArticles">Stay tuned. Interesting articles coming soon.</p>
+      <%  } %>
+
+    <% existArt.reverse().map(art => { %>
+
+      <div class="article-block">
+        <span class="art_title">
+          <%= art.title %>
+        </span><br>
+        <span><%= art.timestamp %></span><br>
+        <span><%= art.type %> article</span><br>
+        <span><%= art.content %></span>
+      </div>
+
+      <form action="/adminDashboard" method="post">
+        <input type="hidden" name="id" value= <%= art.id %> />
+        <input class="delete-article" type="submit" name="submission" value="Delete" />
+      </form>
+      <% }); %>
+
+      </div>
+  </body>
+
+  <script>
+    const deleteBtn = document.getElementsByClassName("deleteBtn");
+
+    [...deleteBtn].map(el => {
+      el.addEventListener("click", () => {
+        console.log("FE removed");
+        el.parentNode.parentNode.remove();
+      });
+
+    });
+
+  </script>
+
+  <footer><%- include('partials/footer'); %></footer>
+
+</html>

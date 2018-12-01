@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head><%- include('partials/head'); %></head>
+<body>
+<header><%- include('partials/header', {user: user}); %></header>
+
+<div class="container">
+<h4 class="page-title">Login</h4>
+
+<form action="/login" method="post">
+
+  <div class="row">
+    <div class="six columns">
+      <label for="login-username">Username</label>
+      <input class="username u-full-width" type="text" name="username" id="login-username">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="six columns">
+      <label for="login-password">Password</label>
+      <input type="password" class="password u-full-width" type="text" name="password" id="login-password">
+    </div>
+  </div>
+
+  <input class="button-primary" type="submit" value="Submit">
+</form>
+
+<% if (message.length > 0) { %>
+       <p class="log-reg-error"><%= message %></p>
+   <% } %>
+
+</div>
+
+</body>
+<footer><%- include('partials/footer'); %></footer>
+</html>
