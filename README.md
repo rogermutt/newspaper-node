@@ -33,22 +33,22 @@ Steps to run the automated tests:
 3. Go to http://localhost:3030/register
 4. Create a new user with the following details:
 
-username: autotester
-password: autotester
+username: autotester<br>
+password: autotester<br>
 
 Reason: The automated tests use the above details to log in and perform all its operations.
 
 ### Break down into end to end tests
 
-The automated tests are  built with: 
-Chai and Mocha 
-Puppeteer - To control headless Chrome
+The automated tests are  built with:<br>
+Chai and Mocha<br>
+Puppeteer - To control headless Chrome<br>
 
 There are 3 types of testing:
 
 ### Article Testing 
 
-1. Create standard articl
+1. Create standard article<br>
 2. Delete standard article 
 
 ### Login Testing 
@@ -61,16 +61,16 @@ There are 3 types of testing:
 
 1. Register and delete account
 
-All tests can be found in the "tests" folder. 
-Additionally you can see the headless browser running but changing one line in each test script as follows:
+All tests can be found in the "tests" folder.<br>
+Additionally you can see the headless browser running but changing one line in each test script as follows:<br>
 
-Replace this:
-  browser = await puppeteer.launch();
+Replace this:<br>
 
-with this:
-  browser = await puppeteer.launch({ headless: false});
+`browser = await puppeteer.launch();`
 
-The currnet t
+with this:<br>
+
+`browser = await puppeteer.launch({ headless: false});`
 
 ## Areas to improve
 
